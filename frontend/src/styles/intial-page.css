@@ -1,0 +1,55 @@
+.initial-page {
+    background-color: orangered;
+    height: 100%;
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.title {
+  color: #fff;
+  font-size: 3.8rem;
+  font-weight: bolder;
+}
+
+.buttons {
+    width: 300px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.buttons > button {
+    background-color: #fff;
+    border: none;
+    border-radius: 6px;
+    color: orangered;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px;
+    /* overflow: hidden; */
+    cursor: pointer;
+    transition: all .5s ease;
+}
+
+.buttons > button:hover {
+    border-radius: 10px;
+    transform: scale(0.94);
+}
+
+.buttons > button > a {
+    height: 100%;
+    width: 100%;
+    color: orangered;
+    text-decoration: none;
+    position: relative;
+    padding: 20px;
+}
+
+@media screen and (max-width:767px) {
+    .initial-page {
+        width: 100vw;
+        padding: 0px;
+    }
+}
