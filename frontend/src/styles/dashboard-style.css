@@ -1,0 +1,26 @@
+.user-dashboard {
+  background-color: var(--cor-fundo);
+  color: #fff;
+  height: 100%;
+  width: 40%;
+}
+
+.dashboard-table {
+    background-color: var(--cor-cards);
+    border-radius: 6px;
+    padding: 30px;
+}
+
+.table {
+  background-color: var(--cor-texto);
+  border-radius: 8px;
+  padding: 30px;
+  color: var(--cor-fundo);
+}
+
+@media screen and (max-width: 767px) {
+  .user-dashboard {
+    width: 100%;
+  }
+
+}

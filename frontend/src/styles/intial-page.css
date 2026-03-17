@@ -1,6 +1,6 @@
 .initial-page {
-    background-color: orangered;
-    height: 100%;
+    background-color: var(--cor-fundo);
+    height: 100vh;
     width: 40%;
     display: flex;
     align-items: center;
@@ -9,9 +9,13 @@
 }
 
 .title {
-  color: #fff;
+  color: var(--cor-texto);
   font-size: 3.8rem;
   font-weight: bolder;
+}
+
+.destaque {
+    color: var(--cor-contraste-texto);
 }
 
 .buttons {
@@ -21,10 +25,9 @@
 }
 
 .buttons > button {
-    background-color: #fff;
+    background-color: var(--cor-cards);
     border: none;
     border-radius: 6px;
-    color: orangered;
     font-size: 1rem;
     font-weight: bold;
     padding: 10px;
@@ -41,7 +44,7 @@
 .buttons > button > a {
     height: 100%;
     width: 100%;
-    color: orangered;
+    color: var(--cor-destaque-secundario);
     text-decoration: none;
     position: relative;
     padding: 20px;

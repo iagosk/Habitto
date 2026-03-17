@@ -4,7 +4,8 @@ function App() {
   return (
     <>
       <div className="initial-page">
-        <h1 className="title">Habitto</h1>
+        <h1 className="title">Habi<span className="destaque">t</span>to<span className="destaque">.</span></h1>
+       
         <br />
         <br />
         <div className="buttons">
