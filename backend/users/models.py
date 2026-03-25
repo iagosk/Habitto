@@ -24,15 +24,14 @@ class MyUserManager(BaseUserManager):
 class User(AbstractBaseUser, PermissionsMixin):   
     nameUser = models.CharField(max_length=255, unique=True)
     # Campo password será criado pela classe 'AbstractBaseUser'
-    fullName = models.CharField(max_length=255)
-    age = models.IntegerField()
+    email = models.CharField(max_length=255)
     objects = MyUserManager()
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
     is_staff = models.BooleanField(default=False)
 
     USERNAME_FIELD = 'nameUser' 
-    REQUIRED_FIELDS = ['age']
+    REQUIRED_FIELDS = ['email']
 
     def __str__(self):
         return self.nameUser

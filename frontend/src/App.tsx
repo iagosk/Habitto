@@ -5,7 +5,6 @@ function App() {
     <>
       <div className="initial-page">
         <h1 className="title">Habi<span className="destaque">t</span>to<span className="destaque">.</span></h1>
-       
         <br />
         <br />
         <div className="buttons">

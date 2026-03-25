@@ -6,12 +6,12 @@ class UserReadSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = User
-        fields = ['id', 'nameUser','fullName', 'age', 'is_admin', 'password']
+        fields = ['id', 'nameUser','email', 'is_admin', 'password']
 
 class UserWriteSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['nameUser', 'fullName', 'age', 'password']
+        fields = ['nameUser', 'email', 'password']
         extra_kwargs = {'password': {'write_only': True}}
         
     def create(self, validated_data):
@@ -21,5 +21,5 @@ class UserWriteSerializer(serializers.ModelSerializer):
 class UserUpdateSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['fullName', 'age']
+        fields = ['email']
         read_only_fields = ['nameUser', 'password']

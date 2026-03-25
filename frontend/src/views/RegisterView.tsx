@@ -8,11 +8,11 @@ export default function Home() {
         <br />
         <p>
           <input
-            type="text"
-            name="fullName"
+            type="email"
+            name="email"
             className="input-form"
-            id="fullName"
-            placeholder="Nome Completo..."
+            id="email"
+            placeholder="Email"
           />
         </p>
         <br />
@@ -22,19 +22,7 @@ export default function Home() {
             name="nameUser"
             className="input-form"
             id="nameUser"
-            placeholder="Nome de Usuário..."
-          />
-        </p>
-        <br />
-        <p>
-          <input
-            type="number"
-            name="age"
-            className="input-form"
-            id="age"
-            placeholder="Idade..."
-            min={0}
-            max={100}
+            placeholder="Nome de Usuário"
           />
         </p>
         <br />
@@ -44,7 +32,7 @@ export default function Home() {
             name="password"
             className="input-form"
             id="password"
-            placeholder="Crie uma senha..."
+            placeholder="Crie uma senha"
           />
         </p>
         <br />
@@ -54,7 +42,7 @@ export default function Home() {
             name="c-password"
             className="input-form"
             id="c-password"
-            placeholder="Confirme a sua senha..."
+            placeholder="Confirme a sua senha"
           />
         </p>
         <br />

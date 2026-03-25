@@ -12,7 +12,7 @@ export default function Home() {
             name="nameUser"
             className="input-form"
             id="nameUser"
-            placeholder="Nome de Usuário..."
+            placeholder="Nome de Usuário"
           />
         </p>
         <br />
@@ -22,7 +22,7 @@ export default function Home() {
             name="password"
             className="input-form"
             id="password"
-            placeholder="Senha..."
+            placeholder="Senha"
           />
         </p>
         <br />

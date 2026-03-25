@@ -27,6 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     # Listagem de usuários cadastrados.
     path('api-users/', include('users.urls')),
+    path('api-habits/', include('habits.urls')),
     # Adição dos endpoints para o login.
     path('api-users/login/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
     path('users/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),

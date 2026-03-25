@@ -1,3 +1,45 @@
 .habits {
+    background-color: var(--cor-cards);
     padding: 30px;
+}
+
+.habits-list {
+    background-color: var(--cor-fundo);
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.table-habits {
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+    overflow: hidden;
+    border-collapse: collapse;
+}
+
+.table-habits > thead > tr > th, .table-habits > tbody > tr > td {
+    padding: 10px;
+    border-radius: 6px;
+    border: 5px solid var(--cor-cards);
+}
+
+.table-habits > thead > tr > th {
+    background-color: var(--cor-fundo);
+    border-color: var(--cor-cards);
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttons-table > .buttons > button {
+    border: none;
+    background-color: var(--cor-cards);
+    color: #fff;
+    cursor: pointer;
+    border-radius: 6px;
+    margin: 0px;
+    padding: 10px;
 }
