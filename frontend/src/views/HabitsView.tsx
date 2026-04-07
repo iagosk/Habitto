@@ -26,6 +26,22 @@ export default function Habits() {
   getHabits();
   return (
     <div className="habits">
+      <div className="habit-register">
+        <h1>New Habit</h1>
+        <form>
+          <p>
+            <input type="text" name="nameHabit" id="nameHabit" className="input-form" placeholder="Hábito..." required/>
+          </p>
+          <br />
+          <p>
+            <input type="text" className="input-form" id="meta" placeholder="Defina uma meta para o hábito..." required/>
+          </p>
+          <br />
+          <p>
+            <input className="button-register" type="submit" value="Adicionar" />
+          </p>
+        </form>
+      </div>
       <div className="habits-list">
         <h1>Habits</h1>
         <br />

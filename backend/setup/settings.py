@@ -93,7 +93,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'dbHabitto',
-        'PASSWORD':'iagohtml5',
+        'PASSWORD':'postgres',
         'USER':'postgres',
         'HOST':'localhost',
         'PORT':'5432',

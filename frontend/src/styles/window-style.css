@@ -1,0 +1,23 @@
+.window {
+  background-color: var(--cor-cards);
+  border-radius: 12px;
+  overflow: hidden;
+  width: 280px;
+  margin: 10px;
+}
+
+.window > header {
+  padding: 20px;
+  color: #fff;
+}
+
+.window > main {
+  padding: 30px;
+}
+
+.window > footer {
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  justify-content: space-around;
+}

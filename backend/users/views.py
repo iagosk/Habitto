@@ -1,6 +1,5 @@
 from django.shortcuts import render
-from rest_framework import generics
-from rest_framework import viewsets
+from rest_framework import generics, viewsets, permissions
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
@@ -22,12 +21,6 @@ class UserAdminViewSet(viewsets.ModelViewSet):
             return UserReadSerializer
         return UserWriteSerializer
     
-# View para deletar usuário *Ação permitida apenas para usuários Admin.
-class UserDeleteViewSet(viewsets.ModelViewSet):
-    permission_classes = [IsAdminUser]
-    queryset = User.objects.all()
-    serializer_class = UserReadSerializer
-    
 
 # View para dashboard de usuário *Ação permitida para todos os usuários autenticados.
 class UserCustomerViewSet(viewsets.ModelViewSet):
@@ -43,6 +36,7 @@ class UserCustomerViewSet(viewsets.ModelViewSet):
 
 class UserProfileViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
+    permission_classes = [IsAuthenticated]
 
     def get_serializer_class(self):
         if self.action in ['update', 'partial_update']:
@@ -58,3 +52,11 @@ class UserProfileViewSet(viewsets.ModelViewSet):
         if self.action in ['updata', 'partial_update'] and not self.request.user.is_staff:
             return self.request.user
         return super().get_object()
+    
+class UserDeleteViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    permission_classes = [IsAuthenticated] 
+
+    def msgDelete(self):
+        if self.action == 'delete':
+            return "usuário deletado com sucesso!"

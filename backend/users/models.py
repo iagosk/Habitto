@@ -11,7 +11,7 @@ class MyUserManager(BaseUserManager):
         
         if password:
             user.set_password(password) # Criptografia da senha
-        
+            
         user.save(using=self._db)
         return user
     def create_superuser(self, nameUser, password=None, **extra_fields):

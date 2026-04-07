@@ -4,6 +4,7 @@
 @import url('./styles/sidebar-style.css');
 @import url('./styles/home-style.css');
 @import url('./styles/habits-style.css');
+@import url('./styles/window-style.css');
 
 :root {
   --cor-principal: #3B82F6;

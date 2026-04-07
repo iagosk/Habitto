@@ -2,12 +2,12 @@ import { NavLink } from "react-router";
 
 function App() {
   return (
-    <>
+    <>  
       <div className="initial-page">
         <h1 className="title">Habi<span className="destaque">t</span>to<span className="destaque">.</span></h1>
         <br />
         <br />
-        <div className="buttons">
+        <div className="buttons-initial-page">
           <button>
             <NavLink to="/login">Entrar</NavLink>
           </button>
