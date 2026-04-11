@@ -1,9 +1,10 @@
 import { useState } from "react"
-import { Outlet, NavLink } from "react-router"
+import { Outlet, NavLink, useNavigate } from "react-router"
 import Sidebar from '../components/Sidebar'
 
 export default function UserDashboardView() {
   const [exibirSidebar, setExibirSidebar] = useState(false);
+  const navigate = useNavigate()
   let [sidebar, setSidebar] = useState(<></>);
 
   const checkExibir = () => {
@@ -15,7 +16,6 @@ export default function UserDashboardView() {
       setExibirSidebar(false)
     }
   };
-
   return (
     <div className="user-dashboard">
       <header>

@@ -8,6 +8,7 @@ import UserDashboardView from "./views/UserDashboardView.tsx";
 import HomeView from "./views/HomeView.tsx";
 import ProfileView from "./views/ProfileView.tsx";
 import HabitsView from "./views/HabitsView.tsx";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 createRoot(document.getElementById("root")!).render(
   <BrowserRouter>

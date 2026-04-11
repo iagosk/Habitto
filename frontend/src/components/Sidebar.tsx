@@ -1,6 +1,13 @@
-import { NavLink } from "react-router";
+import { NavLink, useNavigate} from "react-router";
 
 export default function Sidebar() {
+  const navigate = useNavigate()
+  const logout = () => {
+    localStorage.removeItem("access_token")
+    localStorage.removeItem("refresh_token")
+    navigate('/login')
+  }
+
   return (
     <div className="sidebar">
       <div className="user-area-sidebar">
@@ -32,12 +39,12 @@ export default function Sidebar() {
           </div>
           Hábitos
         </NavLink>
-        <NavLink className="sidebar-link logout" to="/dashboard/">
+        <button className="sidebar-link logout" onClick={() => logout()}>
           <div className="icon">
             <i className="fi fi-sr-leave"></i>
           </div>
           Logout
-        </NavLink>
+        </button>
       </ul>
     </div>
   );

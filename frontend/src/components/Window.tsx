@@ -1,7 +1,5 @@
 import styled from 'styled-components'
 
-
-
 interface AlertI {
   header_content: string;
   main_content: string;
