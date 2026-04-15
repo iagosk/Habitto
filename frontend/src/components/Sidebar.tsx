@@ -1,7 +1,22 @@
+import { useState, useEffect } from 'react'
 import { NavLink, useNavigate} from "react-router";
+import api from '../services/api'
 
 export default function Sidebar() {
   const navigate = useNavigate()
+  const [user, setUser] = useState()
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const response = await api.get('/user-customer/user-dashboard/')
+        console.log(response.data)
+        setUser(response.data[0].nameUser)
+      }catch (error) {
+        console.error(error)
+      }
+    })()
+  }, [])
   const logout = () => {
     localStorage.removeItem("access_token")
     localStorage.removeItem("refresh_token")
@@ -12,7 +27,7 @@ export default function Sidebar() {
     <div className="sidebar">
       <div className="user-area-sidebar">
         <img className="image-profile" src="../../public/images/profile.jpeg" alt="foto de perfil" />
-        <h2>iagosk</h2>
+        <h2>{user}</h2>
       </div>
       <ul>
         <NavLink className="sidebar-link" to="/dashboard/">
