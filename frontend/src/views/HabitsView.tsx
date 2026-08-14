@@ -27,7 +27,7 @@ export default function Habits() {
   return (
     <div className="habits">
       <div className="habit-register">
-        <h1>New Habit</h1>
+        <h1>Adicionar Hábito</h1>
         <form>
           <p>
             <input type="text" name="nameHabit" id="nameHabit" className="input-form" placeholder="Hábito..." required/>
@@ -43,7 +43,7 @@ export default function Habits() {
         </form>
       </div>
       <div className="habits-list">
-        <h1>Habits</h1>
+        <h1>Hábitos</h1>
         <br />
         <table className="table-habits">
           <thead>

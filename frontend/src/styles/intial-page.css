@@ -4,15 +4,17 @@
     width: 40%;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
     flex-direction: column;
+    position: relative;
+    gap: 50px;
 }
 
 .title {
-  color: var(--cor-texto);
-  font-size: 3.8rem;
-  font-weight: bolder;
-  margin-bottom: 30px;
+    color: var(--cor-texto);
+    font-size: 3.8rem;
+    font-weight: bolder;
+    margin-bottom: 30px;
 }
 
 .destaque {
@@ -20,32 +22,44 @@
 }
 
 .buttons-initial-page {
-    width: 300px;
+    width: 90%;
     display: flex;
-    justify-content: space-around;
+    justify-content: end;
+    flex-direction: column;
+    gap: 20px;
+    padding-bottom: 30px;
 }
 
-.buttons-initial-page > button {
+.buttons-initial-page>button {
     background-color: var(--cor-cards);
     border: none;
     border-radius: 6px;
     font-size: 1rem;
     font-weight: bold;
-    padding: 10px;
+    padding: 20px;
     /* overflow: hidden; */
     cursor: pointer;
+    position: relative;
     transition: all .5s ease;
 }
 
-.buttons-initial-page > button:hover {
+.buttons-initial-page > button:nth-child(1) {
+    animation: intro-button 2s ease;
+}
+
+.buttons-initial-page>button:nth-child(2) {
+    animation: intro-button 3s ease;
+}
+
+.buttons-initial-page>button:hover {
     border-radius: 10px;
     transform: scale(0.94);
 }
 
-.buttons-initial-page > button > a {
+.buttons-initial-page>button>a {
     height: 100%;
     width: 100%;
-    color: var(--cor-destaque-secundario);
+    color: #fff;
     text-decoration: none;
     position: relative;
     padding: 20px;

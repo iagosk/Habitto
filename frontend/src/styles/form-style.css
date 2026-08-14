@@ -35,7 +35,7 @@ form {
 
 .buttons-form {
     display: flex;
-    gap: 30px;
+    gap: 10px;
 }
 
 .button-form, .button-form-back {
@@ -43,7 +43,7 @@ form {
     background-color: var(--cor-cards);
     border-radius: 8px;
     border: none;
-    color: var(--cor-destaque-secundario);
+    color: #fff;
     font-weight: bolder;
     font-size: 1rem;
     width: 100%;
@@ -53,7 +53,6 @@ form {
 }
 
 .button-form:hover, .button-form-back:hover {
-    border-radius: 16px;
     transform: scale(0.96);
 }
 

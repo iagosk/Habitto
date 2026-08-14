@@ -5,13 +5,15 @@
 @import url('./styles/home-style.css');
 @import url('./styles/habits-style.css');
 @import url('./styles/window-style.css');
+@import url('./styles/animations/intro-logo.css');
+@import url('./styles/animations/intro-button.css');
 
 :root {
   --cor-principal: #3B82F6;
   --cor-texto: #f1f5f9;
   --color-sucess: #34d399;
-  --cor-cards: #1e293b;
-  --cor-fundo: #0f172a;
+  --cor-cards: #D64218;
+  --cor-fundo: #231d17;
   --cor-contraste-texto: #1e293b;
   --cor-destaque-secundario: #6366f1;
 }
@@ -36,4 +38,31 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+.logo-habitto {
+  width: 100%;
+  animation: intro-logo 3s ease;
+  position: relative;
+  transition: all .5s ease;
+}
+
+.modal-window {
+  background-color: #231d17 !important;
+  color: #f9f1f1;
+}
+
+.button-modal-window {
+  background-color: var(--cor-cards) !important;
+  border: none !important;
+  padding: 10px 30px !important;
+}
+
+.modal-header {
+  background-color: #ff4545 !important;
+  border-bottom: 0px !important;
+}
+
+.modal-error {
+  color: #4b1919 !important;
 }

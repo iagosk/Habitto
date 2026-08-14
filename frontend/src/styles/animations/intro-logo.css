@@ -1,0 +1,19 @@
+@keyframes intro-logo {
+  0% {
+    opacity: 0%;
+    top: -5%;
+  }
+
+  50% {
+    opacity: 60%;
+    top: 0%;
+  }
+
+  75% {
+    opacity: 80%;
+  }
+
+  100% {
+    opacity: 100%;
+  }
+}

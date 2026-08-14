@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { NavLink, useNavigate } from "react-router"
 import api from '../services/api'
-import Alert from 'react-bootstrap/Alert'
+import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button'
 
 export default function Home() {
@@ -10,21 +10,29 @@ export default function Home() {
   const [window, setWindow] = useState<any>(<></>)
   const navigate = useNavigate()
 
+  const [show, setShow] = useState(true);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const handleSubmit: any = async (event: any) => {
     if (nameUser == '' || password == '') {
       console.log("Preencha todos os campos do formulário.")
-      setWindow(<Alert variant="danger">
-        <Alert.Heading>Erro</Alert.Heading>
-        <p>
-          Preencha todos os campos do formulário.
-        </p>
-        <hr />
-        <div className="d-flex justify-content-end">
-          <Button onClick={() => setWindow(<></>)} variant="outline-danger">
-            Fechar
-          </Button>
-        </div>
-      </Alert>)
+      console.log(show)
+      setWindow(<>
+        <Modal
+          show={show}
+          onHide={() => setWindow(<></>)}
+          backdrop="static"
+          keyboard={false}
+        >
+          <Modal.Header className='modal-window modal-header modal-error' closeButton>
+            <Modal.Title>
+              Erro, preencha todos os campos!
+            </Modal.Title>
+          </Modal.Header>
+        </Modal></>)
+
 
       return;
     }
@@ -43,48 +51,49 @@ export default function Home() {
       switch (error.status) {
         case 400:
           console.log("Erro do servidor!")
-          setWindow(<Alert variant="danger">
-            <Alert.Heading>Erro</Alert.Heading>
-            <p>
-              Erro interno do servidor.
-            </p>
-            <hr />
-            <div className="d-flex justify-content-end">
-              <Button onClick={() => setWindow(<></>)} variant="outline-danger">
-                Fechar
-              </Button>
-            </div>
-          </Alert>)
+          setWindow(<>
+            <Modal
+              show={show}
+              onHide={() => setWindow(<></>)}
+              backdrop="static"
+              keyboard={false}
+            >
+              <Modal.Header className='modal-window modal-header modal-error' closeButton>
+                <Modal.Title>Erro de servidor, atualize a página!</Modal.Title>
+              </Modal.Header>
+            </Modal></>)
           break;
         case 401:
-          console.log("Acesso não autorizado!")
-          setWindow(<Alert variant="danger">
-            <Alert.Heading>Erro</Alert.Heading>
-            <p>
-              Usuário não cadastrado no sistema.
-            </p>
-            <hr />
-            <div className="d-flex justify-content-end">
-              <Button onClick={() => setWindow(<></>)} variant="outline-danger">
-                Fechar
-              </Button>
-            </div>
-          </Alert>)
+          console.log("Erro, usuário ou senha incorretos!")
+          setWindow(<>
+            <Modal
+              show={show}
+              onHide={() => setWindow(<></>)}
+              backdrop="static"
+              keyboard={false}
+            >
+              <Modal.Header className='modal-window modal-header modal-error' closeButton>
+                <Modal.Title>
+                  Erro, usuário ou senha incorretos!
+                </Modal.Title>
+              </Modal.Header>
+            </Modal></>)
           break;
         case 404:
           console.log("Página não encontrada!")
-          setWindow(<Alert variant="danger">
-            <Alert.Heading>Erro</Alert.Heading>
-            <p>
-              Página não encontrada.
-            </p>
-            <hr />
-            <div className="d-flex justify-content-end">
-              <Button onClick={() => setWindow(<></>)} variant="outline-danger">
-                Fechar
-              </Button>
-            </div>
-          </Alert>)
+          setWindow(<>
+            <Modal
+              show={show}
+              onHide={() => setWindow(<></>)}
+              backdrop="static"
+              keyboard={false}
+            >
+              <Modal.Header className='modal-window modal-header modal-error' closeButton>
+                <Modal.Title>
+                  Erro, página não encontrada!
+                </Modal.Title>
+              </Modal.Header>
+            </Modal></>)
           break;
       }
     }
@@ -93,7 +102,7 @@ export default function Home() {
     <div className="form-area">
       {window}
       <form action={handleSubmit}>
-        <h1 className="title-form">Login</h1>
+        <img src="../../public/logo-habitto.png" alt="Logo" className="logo-habitto" />
         <br />
         <p>
           <input

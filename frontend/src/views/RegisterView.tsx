@@ -132,7 +132,7 @@ export default function Home() {
     <div className="form-area">
       {window}
       <form action={handleSubmit}>
-        <h1>Registro</h1>
+        <img src="../../public/logo-habitto.png" alt="Logo" className="logo-habitto" />
         <br />
         <p>
           <input
@@ -190,7 +190,6 @@ export default function Home() {
           <NavLink to="/" className="button-form-back">
             Voltar
           </NavLink>
-          <input className="button-form" type="reset" value="Limpar" />
           <button type="submit" className="button-form">
             Cadastrar-se
           </button>

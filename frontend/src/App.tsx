@@ -4,15 +4,13 @@ function App() {
   return (
     <>  
       <div className="initial-page">
-        <h1 className="title">Habi<span className="destaque">t</span>to<span className="destaque">.</span></h1>
-        <br />
-        <br />
+        <img src="../public/logo-habitto.png" className="logo-habitto" alt="Habitto" />
         <div className="buttons-initial-page">
           <button>
-            <NavLink to="/login">Entrar</NavLink>
+            <NavLink to="/register">Criar Conta</NavLink>
           </button>
           <button>
-            <NavLink to="/register">Cadastrar</NavLink>
+            <NavLink to="/login">Já tenho</NavLink>
           </button>
         </div>
       </div>
