@@ -1,19 +1,24 @@
 @import url('./styles/intial-page.css');
 @import url('./styles/form-style.css');
+@import url('./styles/profile-style.css');
+@import url('./styles/settings-style.css');
+@import url('./styles/hydration-habits-style.css');
 @import url('./styles/dashboard-style.css');
 @import url('./styles/sidebar-style.css');
 @import url('./styles/home-style.css');
-@import url('./styles/habits-style.css');
+@import url('./styles/eating-habits-style.css');
+@import url('./styles/training-habits-style.css');
+@import url('./styles/reports-style.css');
 @import url('./styles/window-style.css');
 @import url('./styles/animations/intro-logo.css');
 @import url('./styles/animations/intro-button.css');
 
 :root {
-  --cor-principal: #3B82F6;
+  --cor-fundo: #3F3C3A;
   --cor-texto: #f1f5f9;
   --color-sucess: #34d399;
   --cor-cards: #D64218;
-  --cor-fundo: #231d17;
+  --cor-principal: #221d17;
   --cor-contraste-texto: #1e293b;
   --cor-destaque-secundario: #6366f1;
 }
@@ -42,6 +47,7 @@ body {
 
 .logo-habitto {
   width: 100%;
+  border-radius: 50%;
   animation: intro-logo 3s ease;
   position: relative;
   transition: all .5s ease;

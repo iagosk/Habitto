@@ -11,7 +11,7 @@ export default function UserDashboardView() {
       try {
         const response = await api.get('/user-customer/user-dashboard/')
         console.log('usuário encontrado: ', response)
-      }catch (error) {
+      } catch (error) {
         console.error(error)
         navigate('/login')
       }
@@ -21,10 +21,34 @@ export default function UserDashboardView() {
   return (
     <div className="user-dashboard">
       <header>
-        <h1>Habi<span className="destaque">t</span>to<span className="destaque">.</span></h1>
-        <MenuDropdown></MenuDropdown>
+        <img className="logo-header" src="../../public/logo-habitto.png" alt="Logo do Habitto" />
+        <div className="icons-header">
+          <NavLink className="icon-interface" to="profile">
+            <i className="fi fi-ss-user"></i>
+          </NavLink>
+          <NavLink className="icon-interface" to="settings">
+            <i className="fi fi-ss-settings"></i>
+          </NavLink>
+        </div>
       </header>
       <Outlet />
+      <footer>
+        <NavLink className="icon-interface" to="training-habits">
+          <i className="fi fi-sr-gym"></i>
+        </NavLink>
+        <NavLink className="icon-interface" to="eating-habits">
+          <i className="fi fi-ss-hamburger"></i>
+        </NavLink>
+        <NavLink className="icon-interface icon-settings" to="">
+          <i className="fi fi-ss-home"></i>
+        </NavLink>
+        <NavLink className="icon-interface icon-interface" to="hydration-habits">
+           <i className="fi fi-ss-dewpoint"></i>
+           </NavLink>
+        <NavLink className="icon-interface" to="reports">
+          <i className="fi fi-sc-chart-simple"></i>
+          </NavLink>
+      </footer>
     </div>
   );
 }

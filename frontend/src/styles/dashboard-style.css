@@ -1,3 +1,33 @@
+.logo-header {
+  width: 30%;
+  border-radius: 50%;
+}
+
+.icon-interface {
+  background-color: var(--cor-cards);
+  text-align: center;
+  text-decoration: none;
+  padding-top: 7px;
+  border-radius: 100px;
+  color: var(--cor-principal);
+  font-size: 1.5rem;
+  height: 45px;
+  width: 45px;
+  cursor: pointer;
+  transition: all .5s ease;
+}
+
+.icon-settings {
+  height: 55px;
+  width: 55px;
+  font-size: 1.8rem;
+  padding-top: 10px;
+}
+
+.icon-interface:hover {
+  transform: scale(.97); 
+}
+
 .user-dashboard {
   background-color: var(--cor-fundo);
   color: #fff;
@@ -6,7 +36,7 @@
 }
 
 .dashboard-table {
-  background-color: var(--cor-cards);
+  background-color: var(--cor-principal);
   border-radius: 6px;
   padding: 30px;
 }

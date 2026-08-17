@@ -1,5 +1,5 @@
 .initial-page {
-    background-color: var(--cor-fundo);
+    background-color: var(--cor-principal);
     height: 100vh;
     width: 40%;
     display: flex;
@@ -30,7 +30,7 @@
     padding-bottom: 30px;
 }
 
-.buttons-initial-page>button {
+.buttons-initial-page>.button-initial {
     background-color: var(--cor-cards);
     border: none;
     border-radius: 6px;
@@ -43,22 +43,23 @@
     transition: all .5s ease;
 }
 
-.buttons-initial-page > button:nth-child(1) {
+.buttons-initial-page > .button-initial:nth-child(1) {
     animation: intro-button 2s ease;
 }
 
-.buttons-initial-page>button:nth-child(2) {
+.buttons-initial-page>.button-initial:nth-child(2) {
     animation: intro-button 3s ease;
 }
 
-.buttons-initial-page>button:hover {
+.buttons-initial-page>.button-initial:hover {
     border-radius: 10px;
     transform: scale(0.94);
 }
 
-.buttons-initial-page>button>a {
+.buttons-initial-page>.button-initial {
     height: 100%;
     width: 100%;
+    text-align: center;
     color: #fff;
     text-decoration: none;
     position: relative;
