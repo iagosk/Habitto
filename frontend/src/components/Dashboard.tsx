@@ -12,7 +12,25 @@ export default function Dashboard() {
 
   return (
     <div className="dashboard">
-      <div className="dashboard-table"></div>
+      <div className="dashboard-table">
+        <h1>Bem vindo, Matheus.</h1>
+        <h5>Continue trabalhando duro para conquistar seus objetivos e bater as suas metas.</h5>
+      </div>
+      <br />
+      <div className="dashboard-table">
+        <h1>Segunda Feira</h1>
+        <h4>17 de Agosto de 2026.</h4>
+        <br />
+        <div className="notification">
+          <i className="fi fi-ss-bell notification-icon"></i>
+          <h3>8 metas ativas no momento</h3>
+        </div>        
+        <br />
+        <div className="notification">
+          <i className="fi fi-ss-flame fire-icon"></i>
+          <h3>Continue a sua ofensiva do mês!</h3>
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,5 +1,94 @@
 import api from "../services/api.ts";
 import { useState } from "react";
+import Accordion from 'react-bootstrap/Accordion';
+
+function AccordionTraining() {
+  return (
+    <Accordion className="accordion">
+      <Accordion.Item eventKey="0">
+        <Accordion.Header className="accordion">Segunda Feira</Accordion.Header>
+        <Accordion.Body className="accordion">
+         <ul>
+            <li>Supino reto (barra ou halteres) – 3 x 10 a 12 repetições</li>
+
+            <li>Supino inclinado com halteres – 3 x 10 a 12 repetições</li>
+
+            <li>Desenvolvimento com halteres (ombros) – 3 x 10 a 12 repetições</li>
+
+            <li>Elevação lateral – 3 x 12 a 15 repetições</li>
+
+            <li>Tríceps corda ou tríceps testa – 3 x 12 a 15 repetições</li>
+         </ul>
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="1">
+        <Accordion.Header>Terça Feira</Accordion.Header>
+        <Accordion.Body>
+          <ul>
+            <li>Supino reto (barra ou halteres) – 3 x 10 a 12 repetições</li>
+
+            <li>Supino inclinado com halteres – 3 x 10 a 12 repetições</li>
+
+            <li>Desenvolvimento com halteres (ombros) – 3 x 10 a 12 repetições</li>
+
+            <li>Elevação lateral – 3 x 12 a 15 repetições</li>
+
+            <li>Tríceps corda ou tríceps testa – 3 x 12 a 15 repetições</li>
+          </ul>
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="2">
+        <Accordion.Header>Quarta Feira</Accordion.Header>
+        <Accordion.Body>
+          <ul>
+            <li>Supino reto (barra ou halteres) – 3 x 10 a 12 repetições</li>
+
+            <li>Supino inclinado com halteres – 3 x 10 a 12 repetições</li>
+
+            <li>Desenvolvimento com halteres (ombros) – 3 x 10 a 12 repetições</li>
+
+            <li>Elevação lateral – 3 x 12 a 15 repetições</li>
+
+            <li>Tríceps corda ou tríceps testa – 3 x 12 a 15 repetições</li>
+          </ul>
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="3">
+        <Accordion.Header>Quinta Feira</Accordion.Header>
+        <Accordion.Body>
+          <ul>
+            <li>Supino reto (barra ou halteres) – 3 x 10 a 12 repetições</li>
+
+            <li>Supino inclinado com halteres – 3 x 10 a 12 repetições</li>
+
+            <li>Desenvolvimento com halteres (ombros) – 3 x 10 a 12 repetições</li>
+
+            <li>Elevação lateral – 3 x 12 a 15 repetições</li>
+
+            <li>Tríceps corda ou tríceps testa – 3 x 12 a 15 repetições</li>
+          </ul>
+        </Accordion.Body>
+      </Accordion.Item>
+      <Accordion.Item eventKey="4">
+        <Accordion.Header>Sexta Feira</Accordion.Header>
+        <Accordion.Body>
+          <ul>
+            <li>Supino reto (barra ou halteres) – 3 x 10 a 12 repetições</li>
+
+            <li>Supino inclinado com halteres – 3 x 10 a 12 repetições</li>
+
+            <li>Desenvolvimento com halteres (ombros) – 3 x 10 a 12 repetições</li>
+
+            <li>Elevação lateral – 3 x 12 a 15 repetições</li>
+
+            <li>Tríceps corda ou tríceps testa – 3 x 12 a 15 repetições</li>
+          </ul>
+        </Accordion.Body>
+      </Accordion.Item>
+    </Accordion>
+  );
+}
+
 export default function TrainingHabitsView() {
   const [listHabits, setListHabits] = useState([]);
 
@@ -26,7 +115,26 @@ export default function TrainingHabitsView() {
   getHabits();
   return (
     <div className="training-habits">
-      <h1>Training Habits</h1>
+      <div className="dashboard-table">
+        <div className="notification">
+          <i className="fi fi-ss-gym notification-icon"></i>
+          <h1>Hábitos de Treino</h1>
+        </div>
+        <br />
+        <h3>Confira a sua rotina de treinos e de prática de exercício físico.</h3>
+        <br />
+        <h3>“O corpo alcança o que a mente acredita.”</h3>
+      </div>
+      <br />
+      <div className="dashboard-table">
+        <div className="notification">
+          <i className="fi fi-ss-clock notification-icon"></i>
+          <h1>Treino Semanal</h1>
+        </div>
+        <br />
+        <h3>Indicações do Personal:</h3>
+      <AccordionTraining />
+      </div>
     </div>
   );
 }

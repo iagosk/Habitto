@@ -1,3 +1,42 @@
-.training-habits {
-  height: 100vh;
+ul {
+  padding-left: 0px !important;
+}
+
+ul > li {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.accordion-button {
+  background-color: var(--cor-fundo) !important;
+  color: #fff !important;
+  font-weight: bolder;
+  accent-color: #fff !important;
+}
+
+.accordion-body {
+  background-color: var(--cor-fundo);
+  color: #fff;
+  font-weight: bold;
+}
+
+.accordion-button::after {
+  color: #fff;
+}
+
+.button-daily-training {
+  background-color: var(--cor-cards);
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  color: var(--cor-principal);
+  font-weight: bold;
+  transition: all .5s ease;
+}
+
+.button-daily-training:hover {
+  transform: scale(1.04)
 }
