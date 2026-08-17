@@ -2,6 +2,11 @@ ul {
   padding-left: 0px !important;
 }
 
+.menu-training {
+  background-color: var(--cor-cards) !important;
+  border-color: var(--cor-cards) !important;
+}
+
 ul > li {
   width: 100%;
   display: flex;
@@ -11,10 +16,16 @@ ul > li {
 }
 
 .accordion-button {
-  background-color: var(--cor-fundo) !important;
-  color: #fff !important;
-  font-weight: bolder;
+  background-color: var(--cor-cards) !important;
+  border-color: var(--cor-cards); 
+  outline-color: var(--cor-cards);
+  color: var(--cor-principal) !important;
+  font-weight: bolder !important;
   accent-color: #fff !important;
+}
+
+.accordion-header {
+  background-color: var(--cor-cards) !important;
 }
 
 .accordion-body {

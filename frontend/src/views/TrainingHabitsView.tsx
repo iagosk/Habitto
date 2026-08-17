@@ -2,13 +2,32 @@ import api from "../services/api.ts";
 import { useState } from "react";
 import Accordion from 'react-bootstrap/Accordion';
 
+import Dropdown from 'react-bootstrap/Dropdown';
+
+function Menu() {
+  return (
+    <Dropdown>
+        <Dropdown.Toggle className="menu-training" id="dropdown-basic">
+        Semanas Treinadas
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu>
+        <Dropdown.Item href="#/action-1">1° Semana</Dropdown.Item>
+        <Dropdown.Item href="#/action-2">2° Semana</Dropdown.Item>
+        <Dropdown.Item href="#/action-3">3° Semana</Dropdown.Item>
+        <Dropdown.Item href="#/action-4">4° Semana</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown>
+  );
+}
+
 function AccordionTraining() {
   return (
     <Accordion className="accordion">
       <Accordion.Item eventKey="0">
         <Accordion.Header className="accordion">Segunda Feira</Accordion.Header>
         <Accordion.Body className="accordion">
-         <ul>
+          <ul>
             <li>Supino reto (barra ou halteres) – 3 x 10 a 12 repetições</li>
 
             <li>Supino inclinado com halteres – 3 x 10 a 12 repetições</li>
@@ -18,7 +37,7 @@ function AccordionTraining() {
             <li>Elevação lateral – 3 x 12 a 15 repetições</li>
 
             <li>Tríceps corda ou tríceps testa – 3 x 12 a 15 repetições</li>
-         </ul>
+          </ul>
         </Accordion.Body>
       </Accordion.Item>
       <Accordion.Item eventKey="1">
@@ -128,12 +147,22 @@ export default function TrainingHabitsView() {
       <br />
       <div className="dashboard-table">
         <div className="notification">
-          <i className="fi fi-ss-clock notification-icon"></i>
+          <i className="fi fi-ss-daily-calendar icon-interface"></i>
           <h1>Treino Semanal</h1>
         </div>
         <br />
+        <Menu />
+        <br />
         <h3>Indicações do Personal:</h3>
-      <AccordionTraining />
+        <br />
+        <AccordionTraining />
+      </div>
+      <br />
+      <div className="dashboard-table">
+        <div className="notification">
+          <i className="fi fi-ss-clock notification-icon"></i>
+          <h1>Agendamentos</h1>
+        </div>
       </div>
     </div>
   );
