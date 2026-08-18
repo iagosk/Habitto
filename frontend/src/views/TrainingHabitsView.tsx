@@ -1,23 +1,130 @@
 import api from "../services/api.ts";
 import { useState } from "react";
 import Accordion from 'react-bootstrap/Accordion';
-
+import Carousel from 'react-bootstrap/Carousel';
 import Dropdown from 'react-bootstrap/Dropdown';
+import Button from 'react-bootstrap/Button';
+import Offcanvas from 'react-bootstrap/Offcanvas';
 
-function Menu() {
+function OffCanvasExample({ name, day, ...props }) {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
-    <Dropdown>
-        <Dropdown.Toggle className="menu-training" id="dropdown-basic">
-        Semanas Treinadas
-      </Dropdown.Toggle>
+    <>
+      <Button variant="primary" onClick={handleShow} className="me-2">
+        {name}
+      </Button>
+      <Offcanvas show={show} onHide={handleClose} {...props}>
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title><h1>{day}</h1></Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          <h3>Horários Disponíveis:</h3>
+          <br />
+          <ul>
+            <h3>Manhã</h3>
+            <li><h5>07:00 às 08:00</h5></li>
+            <li><h5>08:00 às 09:00</h5></li>
+            <li><h5>09:00 às 10:00</h5></li>
+            <li><h5>10:00 às 11:00</h5></li>
+          </ul>
+          <br />
+          <ul>
+            <h3>Tarde</h3>
+            <li>
+              <h5>13:00 às 14:00</h5>
+            </li>
+            <li><h5>14:00 às 15:00</h5></li>
+            <li><h5>15:00 às 16:00</h5></li>
+            <li><h5>16:00 às 17:00</h5></li>
+          </ul>
+          <br />
+          <ul>
+            <h3>Noite</h3>
+            <li><h5>18:00 às 19:00</h5></li>
+            <li><h5>19:00 às 20:00</h5></li>
+            <li><h5>20:00 às 21:00</h5></li>
+            <li><h5>21:00 às 22:00</h5></li>
+          </ul>
+        </Offcanvas.Body>
+      </Offcanvas>
+    </>
+  );
+}
 
-      <Dropdown.Menu>
-        <Dropdown.Item href="#/action-1">1° Semana</Dropdown.Item>
-        <Dropdown.Item href="#/action-2">2° Semana</Dropdown.Item>
-        <Dropdown.Item href="#/action-3">3° Semana</Dropdown.Item>
-        <Dropdown.Item href="#/action-4">4° Semana</Dropdown.Item>
-      </Dropdown.Menu>
-    </Dropdown>
+function ButtonDaily({ status, dayRequired }: any) {
+  if (status == "Disponível") {
+    return (
+      <>
+        <Button variant="outline-success" disabled>{status}</Button>
+        {['Agendar'].map((placement, idx) => (
+          <OffCanvasExample key={idx} placement={placement} name={placement} day={dayRequired} />
+        ))}
+      </>
+    );
+  } else {
+    return (
+      <>
+        <Button variant="outline-danger" disabled>{status}</Button>
+        <Button className="button-schedule" disabled>Agendar</Button>
+      </>
+
+    )
+  }
+}
+
+function CarouselDaily() {
+  return (
+    <Carousel className="carousel-daily">
+      <Carousel.Item>
+        <div className="dashboard-table">
+          <h1>Segunda Feira</h1>
+          <p>18/08</p>
+          <div className="buttons-daily">
+            <ButtonDaily status="Disponível" dayRequired="Segunda Feira" />
+          </div>
+        </div>
+      </Carousel.Item>
+      <Carousel.Item>
+        <div className="dashboard-table">
+          <h1>Terça Feira</h1>
+          <p>19/08</p>
+          <div className="buttons-daily">
+            <ButtonDaily status="Disponível" dayRequired="Terça Feira" />
+          </div>
+        </div>
+      </Carousel.Item>
+      <Carousel.Item>
+        <div className="dashboard-table">
+          <h1>Quarta Feira</h1>
+          <p>20/08</p>
+          <div className="buttons-daily">
+            <ButtonDaily status="Indisponível" dayRequired="Quarta Feira" />
+          </div>
+        </div>
+      </Carousel.Item>
+      <Carousel.Item>
+        <div className="dashboard-table">
+          <h1>Quinta Feira</h1>
+          <p>21/08</p>
+          <div className="buttons-daily">
+            <ButtonDaily status="Disponível" dayRequired="Quinta Feira" />
+          </div>
+        </div>
+      </Carousel.Item>
+      <Carousel.Item>
+        <div className="dashboard-table">
+          <h1>Sexta Feira</h1>
+          <p>22/08</p>
+          <div className="buttons-daily">
+            <ButtonDaily status="Disponível" dayRequired="Sexta Feira" />
+          </div>
+        </div>
+      </Carousel.Item>
+    </Carousel>
   );
 }
 
@@ -151,9 +258,7 @@ export default function TrainingHabitsView() {
           <h1>Treino Semanal</h1>
         </div>
         <br />
-        <Menu />
-        <br />
-        <h3>Indicações do Personal:</h3>
+        <h3>Indicações do Personal para esta semana:</h3>
         <br />
         <AccordionTraining />
       </div>
@@ -164,6 +269,8 @@ export default function TrainingHabitsView() {
           <h1>Agendamentos</h1>
         </div>
       </div>
+      <br />
+      <CarouselDaily />
     </div>
   );
 }

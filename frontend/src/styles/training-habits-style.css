@@ -19,13 +19,9 @@ ul > li {
   background-color: var(--cor-cards) !important;
   border-color: var(--cor-cards); 
   outline-color: var(--cor-cards);
-  color: var(--cor-principal) !important;
+  color: #fff !important;
   font-weight: bolder !important;
   accent-color: #fff !important;
-}
-
-.accordion-header {
-  background-color: var(--cor-cards) !important;
 }
 
 .accordion-body {
@@ -50,4 +46,50 @@ ul > li {
 
 .button-daily-training:hover {
   transform: scale(1.04)
+}
+
+.body-table {
+  background-color: var(--cor-fundo);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.buttons-daily {
+  display: flex;
+  gap: 20px;
+}
+
+.button-schedule {
+  background-color: var(--cor-cards) !important;
+  border-color: var(--cor-cards) !important;
+}
+
+.button-schedule:hover {
+  transform: scale(0.97) !important;
+  border: none !important;
+}
+
+.carousel-item > .dashboard-table {
+  width: 70%;
+  margin: 50px;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+.me-2 {
+  background-color: var(--cor-cards) !important;
+  border-color: var(--cor-cards) !important;
+}
+
+.offcanvas {
+  background-color: var(--cor-principal) !important;
+  color: #fff !important;
+  height: 50% !important;
+  width: 100% !important;
+  transition: all .5s ease !important;
+}
+
+.offcanvas-header {
+  background-color: var(--cor-cards);
 }
