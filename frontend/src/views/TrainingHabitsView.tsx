@@ -5,6 +5,18 @@ import Carousel from 'react-bootstrap/Carousel';
 import Dropdown from 'react-bootstrap/Dropdown';
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import ListGroup from 'react-bootstrap/ListGroup';
+
+function List() {
+  return (
+    <ListGroup className="list">
+      <ListGroup.Item className="list-item"><h6>Terça Feira 19/08</h6><Button className="button-list" variant="outline-success" disabled>Confirmada</Button></ListGroup.Item>
+      <ListGroup.Item className="list-item"><h6>Quarta Feira 20/08</h6><Button className="button-list" variant="outline-success" disabled>Confirmada</Button></ListGroup.Item>
+      <ListGroup.Item className="list-item"><h6>Quinta Feira 21/08</h6><Button className="button-list" variant="outline-success" disabled>Confirmada</Button></ListGroup.Item>
+      <ListGroup.Item className="list-item"><h6>Sexta Feira 22/08</h6><Button className="button-list" variant="outline-success" disabled>Confirmada</Button></ListGroup.Item>
+    </ListGroup>
+  );
+}
 
 function OffCanvasExample({ name, day, ...props }) {
   const [show, setShow] = useState(false);
@@ -254,6 +266,15 @@ export default function TrainingHabitsView() {
       <br />
       <div className="dashboard-table">
         <div className="notification">
+          <i className="fi fi-sr-calendar-check icon-interface"></i>
+          <h1>Agendados</h1>
+        </div>
+        <br />
+        <List />
+      </div>
+      <br />
+      <div className="dashboard-table">
+        <div className="notification">
           <i className="fi fi-ss-daily-calendar icon-interface"></i>
           <h1>Treino Semanal</h1>
         </div>
@@ -271,6 +292,7 @@ export default function TrainingHabitsView() {
       </div>
       <br />
       <CarouselDaily />
+      <br />
     </div>
   );
 }
