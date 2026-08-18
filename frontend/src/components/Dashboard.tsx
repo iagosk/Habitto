@@ -27,8 +27,8 @@ export default function Dashboard() {
         </div>        
         <br />
         <div className="notification">
-          <i className="fi fi-ss-flame fire-icon"></i>
-          <h3>Continue a sua ofensiva do mês!</h3>
+          <i className="fi fi-ss-daily-calendar notification-icon"></i>
+          <h3>Você tem treino agendado para hoje!</h3>
         </div>
       </div>
     </div>
