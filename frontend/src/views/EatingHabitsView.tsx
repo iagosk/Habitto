@@ -26,7 +26,27 @@ export default function EatingHabitsView() {
   getHabits();
   return (
     <div className="eating-habits">
-      <h1>Eating Habits</h1>
+      <div className="dashboard-table">
+        <div className="notification">
+          <i className="fi fi-ss-hamburger notification-icon"></i>
+          <h1>Hábitos de Alimentação</h1>
+        </div>
+        <br />
+        <h3>Fique por dentro de suas dietas e acompanhe orientações para refeições.</h3>
+        <br />
+        <h3>"Alimentação saudável não é punição, é autocuidado."</h3>
+      </div>
+      <br />
+      <div className="dashboard-table">
+        <div className="notification">
+          <i className="fi fi-ss-gym notification-icon"></i>
+          <h1>Hábitos de Treino</h1>
+        </div>
+        <br />
+        <h3>Confira a sua rotina de treinos e de prática de exercício físico.</h3>
+        <br />
+        <h3>“O corpo alcança o que a mente acredita.”</h3>
+      </div>
     </div>
   );
 }

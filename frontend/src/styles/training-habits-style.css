@@ -1,3 +1,7 @@
+.training-habits {
+  padding: 30px;
+}
+
 ul {
   padding-left: 0px !important;
 }
@@ -7,7 +11,7 @@ ul {
   border-color: var(--cor-cards) !important;
 }
 
-ul > li {
+ul>li {
   width: 100%;
   display: flex;
   align-items: center;
@@ -17,7 +21,7 @@ ul > li {
 
 .accordion-button {
   background-color: var(--cor-cards) !important;
-  border-color: var(--cor-cards); 
+  border-color: var(--cor-cards);
   outline-color: var(--cor-cards);
   color: #fff !important;
   font-weight: bolder !important;
@@ -70,7 +74,7 @@ ul > li {
   border: none !important;
 }
 
-.carousel-item > .dashboard-table {
+.carousel-item>.dashboard-table {
   width: 70%;
   margin: 50px;
   margin-top: 20px;
@@ -85,11 +89,20 @@ ul > li {
 .offcanvas {
   background-color: var(--cor-principal) !important;
   color: #fff !important;
-  height: 50% !important;
+  height: 60% !important;
   width: 100% !important;
   transition: all .5s ease !important;
 }
 
 .offcanvas-header {
   background-color: var(--cor-cards);
+}
+
+.list-item {
+  background-color: var(--cor-principal) !important;
+  border-color: var(--cor-fundo) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 20px;
+  color: #fff !important;
 }

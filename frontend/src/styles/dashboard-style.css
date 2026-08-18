@@ -56,10 +56,6 @@
   width: 100%;
 }
 
-.training-habits {
-  padding: 30px;
-}
-
 .dashboard-table {
   background-color: var(--cor-principal);
   border-radius: 10px;
