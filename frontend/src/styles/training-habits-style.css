@@ -93,3 +93,12 @@ ul > li {
 .offcanvas-header {
   background-color: var(--cor-cards);
 }
+
+.list-item {
+  background-color: var(--cor-principal) !important;
+  border-color: var(--cor-fundo) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 20px;
+  color: #fff !important;
+}
