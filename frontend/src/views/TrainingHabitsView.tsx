@@ -293,6 +293,19 @@ export default function TrainingHabitsView() {
       <br />
       <CarouselDaily />
       <br />
+      <div className="dashboard-table">
+        <div className="notification">
+          <i className="fi fi-sr-user icon-interface"></i>
+          <h1>Personal:</h1>
+        </div>
+        <br />
+        <div className="image-area">
+          <img className="personal" src="../../public/images/personal.png" alt="foto do personal." />
+          <h1>Gustavo Freitas</h1>
+        </div>
+        <br />
+      </div>
     </div>
+
   );
 }

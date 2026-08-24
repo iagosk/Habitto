@@ -26,7 +26,27 @@ export default function HydrationHabitsView() {
   getHabits();
   return (
     <div className="hydration-habits">
-      <h1>Hydration Habits</h1>
+      <div className="dashboard-table">
+        <div className="notification">
+          <i className="fi fi-ss-dewpoint notification-icon"></i>
+          <h1>Hábitos de Hidratação</h1>
+        </div>
+        <br />
+        <h3>Certifique-se de que a sua rotina de hidratação está sendo mantida.</h3>
+        <br />
+        <h3>“Seu corpo agradece cada gole.”</h3>
+      </div>
+      <br />
+       <div className="dashboard-table">
+        <div className="notification">
+          <i className="fi fi-ss-gym notification-icon"></i>
+          <h1>Hábitos de Treino</h1>
+        </div>
+        <br />
+        <h3>Confira a sua rotina de treinos e de prática de exercício físico.</h3>
+        <br />
+        <h3>“O corpo alcança o que a mente acredita.”</h3>
+      </div>
     </div>
   );
 }

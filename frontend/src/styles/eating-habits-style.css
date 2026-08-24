@@ -1,3 +1,34 @@
 .eating-habits {
-    height: 100vh;
+    padding: 30px;
+}
+
+.title-tmb {
+    display: flex;
+    flex-direction: column
+}
+
+.button-calc {
+    background-color: var(--cor-cards) !important;
+    border-color: var(--cor-cards) !important; 
+    width: 100% !important;
+    padding: 10px !important;
+}
+
+.header-modal-calc {
+    background-color: var(--cor-cards) !important;
+    color: #fff;
+}
+
+.modal-body {
+    background-color: var(--cor-principal);
+    color: #fff;
+}
+
+.modal-footer {
+    background-color: var(--cor-principal) !important;
+}
+
+.nutricionista {
+    width: 90%;
+    border-radius: 10%;
 }
