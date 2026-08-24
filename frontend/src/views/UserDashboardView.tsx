@@ -21,12 +21,12 @@ export default function UserDashboardView() {
   return (
     <div className="user-dashboard">
       <header>
-        <img className="logo-header" src="../../public/logo-habitto.png" alt="Logo do Habitto" />
+        <img className="logo-header" src="../../public/logo.jpeg" alt="Logo do Habitto" />
         <div className="icons-header">
-          <NavLink className="icon-interface" to="profile">
+          <NavLink className="icon-interface icon-header" to="profile">
             <i className="fi fi-ss-user"></i>
           </NavLink>
-          <NavLink className="icon-interface" to="settings">
+          <NavLink className="icon-interface icon-header" to="settings">
             <i className="fi fi-ss-settings"></i>
           </NavLink>
         </div>
@@ -39,7 +39,7 @@ export default function UserDashboardView() {
         <NavLink className="icon-interface" to="eating-habits">
           <i className="fi fi-ss-hamburger"></i>
         </NavLink>
-        <NavLink className="icon-interface icon-settings" to="">
+        <NavLink className="icon-interface icon-home" to="">
           <i className="fi fi-ss-home"></i>
         </NavLink>
         <NavLink className="icon-interface icon-interface" to="hydration-habits">

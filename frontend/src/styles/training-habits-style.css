@@ -106,3 +106,16 @@ ul>li {
   gap: 20px;
   color: #fff !important;
 }
+
+.image-area {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-direction: column; 
+}
+
+.personal {
+  width: 80%;
+  border-radius: 10%;
+}

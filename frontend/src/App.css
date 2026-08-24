@@ -65,10 +65,11 @@ body {
 }
 
 .modal-header {
-  background-color: #ff4545 !important;
+  background-color: var(--cor-cards) !important;
   border-bottom: 0px !important;
 }
 
 .modal-error {
+  background-color: #ff4545 !important;
   color: #4b1919 !important;
 }
