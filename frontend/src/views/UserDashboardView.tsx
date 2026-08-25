@@ -1,7 +1,33 @@
 import { useState, useEffect } from "react"
 import { Outlet, NavLink, useNavigate } from "react-router"
-import api from '../services/api'
+import apiUsers from '../services/users-api'
 import MenuDropdown from "../components/MenuDropdown"
+import Button from 'react-bootstrap/Button';
+import Offcanvas from 'react-bootstrap/Offcanvas';
+
+function OffCanvasExample({ name, ...props }) {
+  const [show, setShow] = useState(false);
+  
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  
+  return (
+    <>
+      <Button variant="primary" onClick={handleShow} className="me-2 button-interface">
+        <i className="fi fi-ss-settings"></i>
+      </Button>
+      <Offcanvas show={show} onHide={handleClose} {...props}>
+        <Offcanvas.Header closeButton>
+          <Offcanvas.Title>Configurações</Offcanvas.Title>
+        </Offcanvas.Header>
+        <Offcanvas.Body>
+          Some text as placeholder. In real life you can have the elements you
+          have chosen. Like, text, images, lists, etc.
+        </Offcanvas.Body>
+      </Offcanvas>
+    </>
+  );
+}
 
 export default function UserDashboardView() {
   const navigate = useNavigate()
@@ -9,7 +35,7 @@ export default function UserDashboardView() {
   useEffect(() => {
     (async () => {
       try {
-        const response = await api.get('/user-customer/user-dashboard/')
+        const response = await apiUsers.get('/user-customer/user-dashboard/')
         console.log('usuário encontrado: ', response)
       } catch (error) {
         console.error(error)
@@ -26,9 +52,9 @@ export default function UserDashboardView() {
           <NavLink className="icon-interface icon-header" to="profile">
             <i className="fi fi-ss-user"></i>
           </NavLink>
-          <NavLink className="icon-interface icon-header" to="settings">
-            <i className="fi fi-ss-settings"></i>
-          </NavLink>
+            {['end'].map((placement, idx) => (
+              <OffCanvasExample key={idx} placement={placement} name={placement} />
+            ))}
         </div>
       </header>
       <Outlet />
@@ -43,11 +69,11 @@ export default function UserDashboardView() {
           <i className="fi fi-ss-home"></i>
         </NavLink>
         <NavLink className="icon-interface icon-interface" to="hydration-habits">
-           <i className="fi fi-ss-dewpoint"></i>
-           </NavLink>
+          <i className="fi fi-ss-dewpoint"></i>
+        </NavLink>
         <NavLink className="icon-interface" to="reports">
           <i className="fi fi-sc-chart-simple"></i>
-          </NavLink>
+        </NavLink>
       </footer>
     </div>
   );

@@ -1,3 +1,35 @@
-.reports {
-  height: 100vh;
+progress.progressBar {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 16px;
+  border: none;
+  border-radius: 10px;
+  background-color: #e0e0e0;
+  overflow: hidden;
+}
+
+/* Preenchimento no Chrome, Safari e Edge */
+progress.progressBar::-webkit-progress-bar {
+  background-color: #e0e0e0;
+  border-radius: 10px;
+}
+
+progress.progressBar::-webkit-progress-value {
+  background-color: var(--cor-cards);
+  transition: width 0.3s ease;
+}
+
+/* Preenchimento no Firefox */
+progress.progressBar::-moz-progress-bar {
+  background-color: var(--cor-cards);
+  transition: width 0.3s ease;
+}
+
+.title-progress {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  gap: 20px;
 }

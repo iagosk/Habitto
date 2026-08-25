@@ -1,6 +1,6 @@
 export default function SettingsView() {
   return (
-    <div className="settings">
+    <div className="view">
       <h1>Settings</h1>
     </div>
   )

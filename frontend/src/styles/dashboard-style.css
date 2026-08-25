@@ -27,7 +27,7 @@
 }
 
 .icon-interface:hover {
-  transform: scale(.97); 
+  transform: scale(.97);
 }
 
 .notification {
@@ -37,7 +37,8 @@
   gap: 14px;
 }
 
-.notification-icon, .fire-icon {
+.notification-icon,
+.fire-icon {
   background-color: var(--cor-cards);
   text-align: center;
   text-decoration: none;
@@ -87,81 +88,15 @@
   justify-content: center;
 }
 
-@media screen and (max-width: 767px) {
-  .user-dashboard {
-    width: 100%;
-  }
+.button-interface {
+  color: var(--cor-principal) !important;
+  font-size: 1.5rem !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  padding-top: 10px !important; 
+}
 
-  .data {
-    display: flex;
-    width: 100%;
-    gap: 10px;
-    align-items: center;
-    justify-content: space-between;
-  }
-
-  .progress {
-    accent-color: var(--cor-cards);
-    padding: 20px;
-    width: 160px;
-    color: red;
-    cursor: pointer;
-  }
-
-  .data-progress {
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-  }
-
-  .graphic {
-    border: 8px solid black;
-    height: 100%;
-    width: 210px;
-    overflow: hidden;
-    border-radius: 50%;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
-
-  .bloco {
-    height: 100px;
-    width: 100px;
-  }
-
-  .agua {
-    background-color: blue;
-  }
-
-  .agua-progress {
-    accent-color: blue;
-  }
-
-  .sono {
-    background-color: purple;
-  }
-
-  .sono-progress {
-    accent-color: purple;
-  }
-
-  .calorias {
-    background-color: red;
-  }
-
-  .calorias-progress {
-    accent-color: red;
-  }
-
-  .estudo {
-    background-color: green;
-  }
-
-  .estudo-progress {
-    accent-color: green;
-  }
+.offcanvas-backdrop {
+  background-color: var(--cor-principal) !important;
+  opacity: 1 !important;
 }

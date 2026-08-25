@@ -2,7 +2,7 @@ import Dashboard from "../components/Dashboard.tsx";
 
 export default function HomeView() {
   return (
-    <div className="home">
+    <div className="view">
       <Dashboard></Dashboard>
     </div>
   );
