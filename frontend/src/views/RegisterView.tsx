@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { NavLink, useNavigate } from "react-router"
-import api from "../services/api"
+import apiUsers from "../services/users-api"
 import Alert from 'react-bootstrap/Alert'
 import Button from 'react-bootstrap/Button'
 
@@ -49,7 +49,7 @@ export default function Home() {
       return;
     }
 
-    if(password.length < 8) {
+    if (password.length < 8) {
       console.log("A senha deve conter no mínimo 8 caracteres.")
       setWindow(<Alert variant="danger">
         <Alert.Heading>Erro</Alert.Heading>
@@ -70,15 +70,15 @@ export default function Home() {
     console.log("Formulário de registro enviado");
 
     try {
-      const response = await api.post('register/', {
+      const response = await apiUsers.post('register/', {
         nameUser: nameUser,
         email: email,
         password: password
       })
 
-      if(response.status == 201) {
+      if (response.status == 201) {
         console.log("Deu certo")
-        navigate("/login")  
+        navigate("/login")
       }
 
     } catch (error: any) {

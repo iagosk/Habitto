@@ -1,4 +1,4 @@
-import api from "../services/api.ts";
+import apiUsers from "../services/users-api.ts";
 import { useState } from "react";
 import Accordion from 'react-bootstrap/Accordion';
 import Carousel from 'react-bootstrap/Carousel';
@@ -231,7 +231,7 @@ export default function TrainingHabitsView() {
   const [listHabits, setListHabits] = useState([]);
 
   const getHabits = async () => {
-    const response = await api.get("api-habits/habits-list/");
+    const response = await apiUsers.get("api-habits/habits-list/");
     const list = response.data;
     const habits = list.map((item: any) => (
       <tr>
@@ -252,7 +252,7 @@ export default function TrainingHabitsView() {
 
   getHabits();
   return (
-    <div className="training-habits">
+    <div className="view">
       <div className="dashboard-table">
         <div className="notification">
           <i className="fi fi-ss-gym notification-icon"></i>

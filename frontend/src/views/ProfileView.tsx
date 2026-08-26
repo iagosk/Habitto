@@ -1,7 +1,9 @@
 export default function ProfileView() {
-    return(
-        <div className="profile">
-            <h1>Profile</h1>
+    return (
+        <div className="view">
+            <div className="dashboard-table">
+                
+            </div>
         </div>
     )
 }

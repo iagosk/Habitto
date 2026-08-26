@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { NavLink, useNavigate } from "react-router"
-import api from '../services/api'
+import apiUsers from '../services/users-api'
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button'
 
@@ -37,13 +37,13 @@ export default function Home() {
       return;
     }
     try {
-      const response = await api.post("login/", {
+      const response = await apiUsers.post("login/", {
         nameUser: nameUser,
         password: password
       })
       const token = response.data.access
       localStorage.setItem('access_token', token)
-      api.defaults.headers.common['Authorization'] = `Bearer ${token}`
+      apiUsers.defaults.headers.common['Authorization'] = `Bearer ${token}`
       console.log("Usuário logado com sucesso!")
       console.log(response.data)
       navigate('/dashboard')

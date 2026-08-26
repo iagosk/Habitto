@@ -4,12 +4,10 @@
 @import url('./styles/settings-style.css');
 @import url('./styles/hydration-habits-style.css');
 @import url('./styles/dashboard-style.css');
-@import url('./styles/sidebar-style.css');
 @import url('./styles/home-style.css');
 @import url('./styles/eating-habits-style.css');
 @import url('./styles/training-habits-style.css');
 @import url('./styles/reports-style.css');
-@import url('./styles/window-style.css');
 @import url('./styles/animations/intro-logo.css');
 @import url('./styles/animations/intro-button.css');
 
@@ -32,6 +30,7 @@
 
 body {
   background-image: url('../public/images/background.jpg');
+  background-color: var(--cor-fundo) !important;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   width: 100%;
@@ -43,6 +42,10 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+.view {
+  padding: 30px;
 }
 
 .logo-habitto {

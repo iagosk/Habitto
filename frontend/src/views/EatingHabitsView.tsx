@@ -1,4 +1,4 @@
-import api from "../services/api.ts";
+import apiUsers from "../services/users-api.ts";
 import { useState } from "react";
 import { Button, Form, Modal, Accordion } from 'react-bootstrap';
 
@@ -118,7 +118,7 @@ export default function EatingHabitsView() {
   const [listHabits, setListHabits] = useState([]);
 
   const getHabits = async () => {
-    const response = await api.get("api-habits/habits-list/");
+    const response = await apiUsers.get("api-habits/habits-list/");
     const list = response.data;
     const habits = list.map((item: any) => (
       <tr>
@@ -145,7 +145,7 @@ export default function EatingHabitsView() {
   const handleShow = () => setShow(true);
 
   return (
-    <div className="eating-habits">
+    <div className="view">
       <div className="dashboard-table">
         <div className="notification">
           <i className="fi fi-ss-hamburger notification-icon"></i>
