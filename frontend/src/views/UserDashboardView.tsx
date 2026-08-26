@@ -4,25 +4,90 @@ import apiUsers from '../services/users-api'
 import MenuDropdown from "../components/MenuDropdown"
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import Form from 'react-bootstrap/Form';
+import Dropdown from "react-bootstrap/Dropdown";
 
 function OffCanvasExample({ name, ...props }) {
   const [show, setShow] = useState(false);
-  
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
-  
+
   return (
     <>
       <Button variant="primary" onClick={handleShow} className="me-2 button-interface">
         <i className="fi fi-ss-settings"></i>
       </Button>
-      <Offcanvas show={show} onHide={handleClose} {...props}>
-        <Offcanvas.Header closeButton>
-          <Offcanvas.Title>Configurações</Offcanvas.Title>
+      <Offcanvas backdropClassName="offcanvas-settings" show={show} onHide={handleClose} {...props}>
+        <Offcanvas.Header className="offcanvas-header-settings" closeButton>
+          <i className="fi fi-ss-settings"></i>
+          <Offcanvas.Title>
+            <h2>Configurações</h2>
+          </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
-          Some text as placeholder. In real life you can have the elements you
-          have chosen. Like, text, images, lists, etc.
+          <Form>
+            <div className="title-settings">
+              <i className="fi fi-ss-user icon-interface-settings"></i>
+              <h2>Perfil</h2>
+            <Dropdown>
+              <Dropdown.Toggle className="button-update-profile" id="dropdown-basic" size="sm">
+                Editar
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item href="#/action-1">Nome de Usuário</Dropdown.Item>
+                <Dropdown.Item href="#/action-2">Senha</Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+            </div>
+            <hr />
+            <div className="title-settings">
+              <i className="fi fi-sr-palette icon-interface-settings"></i>
+              <h2>Tema</h2>
+            </div>
+            <Form.Check
+              type="switch"
+              className="switch-settings"
+              id="custom-switch"
+              label="Modo Escuro"
+            />
+            <Form.Check
+              type="switch"
+              id="custom-switch"
+              label="Modo Claro"
+            />
+            <Form.Check
+              type="switch"
+              id="custom-switch"
+              label="Padrão do Sistema"
+            />
+            <br />
+            <div className="title-settings">
+              <i className="fi fi-ss-user-key icon-interface-settings"></i>
+              <h2>Permissões</h2>
+            </div>
+            <Form.Check
+              type="switch"
+              id="custom-switch"
+              label="Áudio"
+            />
+            <Form.Check
+              type="switch"
+              id="custom-switch"
+              label="Notificações"
+            />
+            <Form.Check
+              type="switch"
+              id="custom-switch"
+              label="Localização"
+            />
+            <div className="title-settings">
+              <i className="fi fi-sr-heart-partner-handshake icon-interface-settings"></i>
+              <h2>Ajuda</h2>
+            </div>
+            <a href="#">Central de Ajuda</a>
+          </Form>
         </Offcanvas.Body>
       </Offcanvas>
     </>
@@ -49,12 +114,9 @@ export default function UserDashboardView() {
       <header>
         <img className="logo-header" src="../../public/logo.jpeg" alt="Logo do Habitto" />
         <div className="icons-header">
-          <NavLink className="icon-interface icon-header" to="profile">
-            <i className="fi fi-ss-user"></i>
-          </NavLink>
-            {['end'].map((placement, idx) => (
-              <OffCanvasExample key={idx} placement={placement} name={placement} />
-            ))}
+          {['end'].map((placement, idx) => (
+            <OffCanvasExample className="offcanvas-settings" key={idx} placement={placement} name={placement} />
+          ))}
         </div>
       </header>
       <Outlet />

@@ -96,7 +96,21 @@
   padding-top: 10px !important; 
 }
 
-.offcanvas-backdrop {
+.offcanvas-settings {
   background-color: var(--cor-principal) !important;
-  opacity: 1 !important;
+  color: #fff !important;
+  width: 60% !important;
+}
+
+.offcanvas-header-settings {
+  display: flex !important;
+  gap: 10px;
+  align-items: center !important;
+  justify-content: center !important; 
+}
+.offcanvas-header-settings>i {
+  font-size: 1.4rem;
+}
+.offcanvas-header-settings h2 {
+  margin-bottom: 5px !important;
 }

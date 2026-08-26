@@ -21,16 +21,16 @@ form {
 }
 
 .input-form {
-    background-color: rgb(209, 202, 202);
-    width: 100%;
-    border: none;
-    border-radius: 6px;
-    padding: 12px;
-    font-size: 1rem;
+    background-color: rgb(209, 202, 202) !important;
+    width: 100% !important;
+    border: none !important;
+    border-radius: 6px !important;
+    padding: 12px !important;
+    font-size: 1rem !important;
 }
 
 .input-form:focus {
-    outline: 2px solid;
+    outline: 2px solid !important;
 }
 
 .buttons-form {

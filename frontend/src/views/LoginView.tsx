@@ -2,7 +2,9 @@ import { useState } from 'react'
 import { NavLink, useNavigate } from "react-router"
 import apiUsers from '../services/users-api'
 import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button'
+import Button from 'react-bootstrap/Button';
+import Form from "react-bootstrap/Form";
+import FloatingLabel from "react-bootstrap/FloatingLabel";
 
 export default function Home() {
   const [nameUser, setNameUser] = useState('')
@@ -105,27 +107,31 @@ export default function Home() {
         <img src="../../public/logo-habitto.png" alt="Logo" className="logo-habitto" />
         <br />
         <p>
-          <input
-            type="text"
-            name="nameUser"
-            className="input-form"
-            id="nameUser"
-            value={nameUser}
-            onChange={e => setNameUser(e.target.value)}
-            placeholder="Nome de Usuário"
-          />
+          <FloatingLabel
+            controlId="floatingInput"
+            label="Email"
+            className="mb-3"
+          >
+            <Form.Control type="text"
+              name="nameUser"
+              className="input-form"
+              id="nameUser"
+              value={nameUser}
+              onChange={e => setNameUser(e.target.value)}
+              placeholder="Nome de Usuário" />
+          </FloatingLabel>
         </p>
         <br />
         <p>
-          <input
-            type="password"
-            name="password"
-            className="input-form"
-            id="password"
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-            placeholder="Senha"
-          />
+          <FloatingLabel controlId="floatingPassword" label="Senha">
+            <Form.Control type="password"
+              name="password"
+              className="input-form"
+              id="password"
+              value={password}
+              onChange={e => setPassword(e.target.value)}
+              placeholder="Senha" />
+          </FloatingLabel>
         </p>
         <br />
         <div className="buttons-form">

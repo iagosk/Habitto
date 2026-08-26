@@ -1,0 +1,30 @@
+.icon-interface-settings {
+  background-color: var(--cor-cards);
+  padding: 10px;
+  border-radius: 50%;
+  color: var(--cor-principal);
+  font-size: 1.5rem !important;
+  height: 40px;
+  width: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-settings {
+  height: 80px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.form-check-input:checked {
+  background-color: var(--cor-cards) !important;
+  border-color: var(--cor-cards) !important; 
+}
+
+.button-update-profile {
+  margin-left: 30px !important;
+  background-color: var(--cor-cards) !important;
+  border-color: var(--cor-cards) !important;
+}

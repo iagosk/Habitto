@@ -29,7 +29,7 @@ function OffCanvasExample({ name, day, ...props }) {
       <Button variant="primary" onClick={handleShow} className="me-2">
         {name}
       </Button>
-      <Offcanvas show={show} onHide={handleClose} {...props}>
+      <Offcanvas backdropClassName="offcanvas-training" show={show} onHide={handleClose} {...props}>
         <Offcanvas.Header closeButton>
           <Offcanvas.Title><h1>{day}</h1></Offcanvas.Title>
         </Offcanvas.Header>
@@ -73,7 +73,7 @@ function ButtonDaily({ status, dayRequired }: any) {
       <>
         <Button variant="outline-success" disabled>{status}</Button>
         {['Agendar'].map((placement, idx) => (
-          <OffCanvasExample key={idx} placement={placement} name={placement} day={dayRequired} />
+          <OffCanvasExample className="offcanvas-training" key={idx} placement={placement} name={placement} day={dayRequired} />
         ))}
       </>
     );

@@ -6,7 +6,6 @@ import LoginView from "./views/LoginView.tsx";
 import RegisterView from "./views/RegisterView.tsx";
 import UserDashboardView from "./views/UserDashboardView.tsx";
 import HomeView from "./views/HomeView.tsx";
-import ProfileView from "./views/ProfileView.tsx";
 import EatingHabitsView from "./views/EatingHabitsView.tsx";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import TrainingHabits from "./views/TrainingHabitsView.tsx";
@@ -24,7 +23,6 @@ createRoot(document.getElementById("root")!).render(
       <Route path='register' element={<RegisterView />}></Route>
       <Route path='dashboard' element={<UserDashboardView />}>
         <Route index element={<HomeView />}></Route>
-        <Route path="profile" element={<ProfileView />}></Route>
         <Route path="eating-habits" element={<EatingHabitsView />}></Route>
         <Route path="training-habits" element={<TrainingHabits />}></Route>
         <Route path="hydration-habits" element={<HydrationHabitsView />}></Route>
